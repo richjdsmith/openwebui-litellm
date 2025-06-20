@@ -20,44 +20,9 @@ Before you begin, ensure you have the following installed on your server (these 
 *   Docker
 *   Docker Compose
 
-### 1. Install Docker and Docker Compose
+If you don't have Docker installed, google it. 
 
-If you don't have Docker installed, follow these steps.
-
-**Install Docker:**
-```bash
-# Update package lists
-sudo apt-get update
-
-# Install prerequisites
-sudo apt-get install -y ca-certificates curl gnupg
-
-# Add Docker's official GPG key
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-# Add the Docker repository to Apt sources
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-
-# Install Docker Engine, CLI, and Containerd
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-**Add your user to the `docker` group to run commands without `sudo`:**
-```bash
-sudo usermod -aG docker ${USER}
-# You will need to log out and log back in for this to take effect.
-newgrp docker
-```
-
-**Docker Compose is installed as a plugin with the command above.**
-
-### 2. (Optional) Install Cloudflared for Public Access
+### (Optional) Install Cloudflared for Public Access
 
 If you want to expose your services to the internet securely, you can use Cloudflare Tunnels.
 
