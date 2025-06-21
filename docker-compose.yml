@@ -72,7 +72,7 @@ services:
       - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
       - WEBUI_NAME=${WEBUI_NAME}
       - WEBUI_URL=${WEBUI_URL}
-      - WEBUI_AUTH=False
+      - WEBUI_AUTH=True
       - ENABLE_SIGNUP=False
       - DEFAULT_USER_ROLE=user
       - ENABLE_FORWARD_USER_INFO_HEADERS=True
